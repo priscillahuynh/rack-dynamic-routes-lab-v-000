@@ -4,6 +4,10 @@ class application
     req = Rack::Request.new(env)
 
     if req.path=="items/<ITEM NAME>"
+      resp.write "You requested item name"
+    else
+      resp.write "Route not found"
+      resp.status = 400
     resp.finish
   end
 end
